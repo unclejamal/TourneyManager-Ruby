@@ -5,5 +5,5 @@ describe TourneyOffice do
     office = TourneyOffice.new
     tourneys = office.view
     tourneys.should == []
-end
+  end
 end

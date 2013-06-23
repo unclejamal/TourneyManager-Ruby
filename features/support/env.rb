@@ -57,3 +57,12 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+# unclejamal - impersonator pattern
+require_relative 'impersonators'
+
+module ApplicationWorld
+  include Cucumber::Impersonators
+  include Cucumber::ToBeRemoved
+end
+
+World(ApplicationWorld)

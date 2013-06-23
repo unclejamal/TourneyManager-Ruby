@@ -1,11 +1,13 @@
-Given(/^there are no tourneys$/) do
-  @office = TourneyOffice.new
+Given(/^(System) has no tourneys$/) do |system|
+  system.create_office
 end
 
-When(/^spectator views them$/) do
-  @actual_tourneys = @office.view
+When(/^(Spectator) views all tourneys$/) do |spectator|
+  @actual_tourneys = spectator.view_tourneys
 end
 
-Then(/^they see no tourneys$/) do
+Then(/^(They) see no tourneys$/) do |spectator|
   @actual_tourneys.should == []
 end
+
+
